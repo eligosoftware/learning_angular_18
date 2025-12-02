@@ -4,3 +4,9 @@ ng new <name>
 
 new project in the current directory (the name of the directory should not contain )
 ng new .  
+
+to start the application at port 4209
+ng s --port 4209
+
+create new components (?) in the pages folder (/src/app/pages)
+ng g c search     
