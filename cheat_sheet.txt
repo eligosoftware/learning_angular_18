@@ -1,0 +1,6 @@
+new project with the name "":
+
+ng new <name>
+
+new project in the current directory (the name of the directory should not contain )
+ng new .  
