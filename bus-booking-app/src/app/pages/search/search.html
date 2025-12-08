@@ -1,1 +1,76 @@
-<p>search works!</p>
+<div class="search-container">
+  <h1>Bus Booking System</h1>
+  
+  <div class="search-form">
+    <input 
+      type="text" 
+      id="from" 
+      placeholder="Nagpur"
+      aria-label="Departure city"
+    />
+
+    <input 
+      type="text" 
+      id="to" 
+      placeholder="Pune"
+      aria-label="Destination city"
+    />
+
+    <input 
+      type="date" 
+      id="date" 
+      value="2024-08-17"
+      aria-label="Travel date"
+    />
+
+    <button type="button" class="search-btn">
+      SEARCH<br>BUSES
+    </button>
+  </div>
+
+  <section class="available-buses">
+    <h2>Available Buses</h2>
+    
+    <div class="bus-card">
+      <div class="bus-info">
+        <h3 class="bus-name">IntrCity SmartBus</h3>
+        <p class="bus-type">A/C Sleeper (2+1)</p>
+      </div>
+
+      <div class="time-info">
+        <div class="time-item">
+          <p class="time">19:00</p>
+          <p class="label">Departure</p>
+        </div>
+
+        <div class="time-item">
+          <p class="time">13h 55m</p>
+          <p class="label">Duration</p>
+        </div>
+
+        <div class="time-item">
+          <p class="time">08:55</p>
+          <p class="label">Arrival</p>
+          <p class="arrival-date">18-Aug</p>
+        </div>
+      </div>
+
+      <div class="rating-info">
+        <div class="rating">
+          <span class="rating-value">4.5</span>
+          <span class="star">⭐</span>
+        </div>
+        <p class="rating-count">567 Ratings</p>
+      </div>
+
+      <div class="price-info">
+        <p class="price">INR 935</p>
+        <p class="seats-available">8 Seats<br>available</p>
+      </div>
+
+      <button type="button" class="view-seats-btn">
+        VIEW SEATS
+      </button>
+    </div>
+  </section>
+</div>
