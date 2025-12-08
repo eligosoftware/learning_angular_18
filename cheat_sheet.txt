@@ -10,3 +10,6 @@ ng s --port 4209
 
 create new components (?) in the pages folder (/src/app/pages)
 ng g c search     
+
+for creating a new Service ("master") in Service folder
+ng g s master
