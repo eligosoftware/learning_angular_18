@@ -8,8 +8,8 @@
     >
       <option value="">Select departure city</option>
       @if (locations | async; as locationList) {
-        @for (location of locationList; track location.id) {
-          <option [value]="location.id">{{ location.name }}</option>
+        @for (location of locationList; track location.locationId) {
+          <option [value]="location.locationId">{{ location.locationName }}</option>
         }
       }
     </select>
@@ -20,8 +20,8 @@
     >
       <option value="">Select destination city</option>
       @if (locations | async; as locationList) {
-        @for (location of locationList; track location.id) {
-          <option [value]="location.id">{{ location.name }}</option>
+        @for (location of locationList; track location.locationId) {
+          <option [value]="location.locationId">{{ location.locationName }}</option>
         }
       }
     </select>
