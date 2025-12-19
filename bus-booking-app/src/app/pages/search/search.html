@@ -5,6 +5,9 @@
     <select
       id="from"
       aria-label="Departure city"
+
+      name = "from"
+      [(ngModel)]="searchObject.from"
     >
       <option value="">Select departure city</option>
       @if (locations | async; as locationList) {
@@ -17,6 +20,9 @@
     <select
       id="to"
       aria-label="Destination city"
+
+      name ="to"
+      [(ngModel)]="searchObject.to"
     >
       <option value="">Select destination city</option>
       @if (locations | async; as locationList) {
@@ -31,9 +37,12 @@
       id="date"
       value="2024-08-17"
       aria-label="Travel date"
+
+      name="travelDate"
+      [(ngModel)]="searchObject.travelDate"
     />
 
-    <button type="button" class="search-btn">
+    <button type="button" class="search-btn" (click)="onSearch()">
       SEARCH<br>BUSES
     </button>
   </div>
@@ -41,7 +50,50 @@
   <section class="available-buses">
     <h2>Available Buses</h2>
 
-    <div class="bus-card">
+    @for(item of busList; track $index) {
+      <div class="bus-card">
+        <div class="bus-info">
+          <h3 class="bus-name">{{ item.busName }}</h3>
+          <p class="bus-type">{{ item.busType }}</p>
+        </div>
+
+        <div class="time-info">
+          <div class="time-item">
+            <p class="time">{{ item.departureTime }}</p>
+            <p class="label">Departure</p>
+          </div>
+
+          <div class="time-item">
+            <p class="time">{{ item.duration }}</p>
+            <p class="label">Duration</p>
+          </div>
+
+          <div class="time-item">
+            <p class="time">{{ item.arrivalTime }}</p>
+            <p class="label">Arrival</p>
+            <p class="arrival-date">{{ item.arrivalDate }}</p>
+          </div>
+        </div>
+
+        <div class="rating-info">
+          <div class="rating">
+            <span class="rating-value">{{ item.ratingValue }}</span>
+            <span class="star">⭐</span>
+          </div>
+          <p class="rating-count">{{ item.ratingCount }} Ratings</p>
+        </div>
+
+        <div class="price-info">
+          <p class="price">INR {{ item.price }}</p>
+          <p class="seats-available">{{ item.seatsAvailable }} Seats<br>available</p>
+        </div>
+
+        <button type="button" class="view-seats-btn">
+          VIEW SEATS
+        </button>
+      </div>
+    }
+    <!-- <div class="bus-card">
       <div class="bus-info">
         <h3 class="bus-name">IntrCity SmartBus</h3>
         <p class="bus-type">A/C Sleeper (2+1)</p>
@@ -81,6 +133,6 @@
       <button type="button" class="view-seats-btn">
         VIEW SEATS
       </button>
-    </div>
+    </div> -->
   </section>
 </div>

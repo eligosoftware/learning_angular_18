@@ -12,4 +12,7 @@ export class Master {
     // Use proxy path instead of full URL
     return this.http.get('/api/BusBooking/GetBusLocations');
   }
+  searchBus(from: number, to: number, travelDate: string): Observable<any[]> {
+    return this.http.get<any[]>(`/api/BusBooking/searchBus?from=${from}&to=${to}&travelDate=${travelDate}`);
+  }
 }
